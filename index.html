@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="js/helper.js"></script>
+	<script src="js/script.js"></script>
+	<link rel="stylesheet" href="css/Style.css">
+	<link rel="stylesheet" href="css/Modal.css">
+	<title>CUOCOX</title>
+</head>
+<body>
+	<header>
+		<div class="titulo-pagina">
+			<img style="width: 100px; height: 100px;" src="img/logo_grande.svg" alt="">
+			<h1>CUOCOX</h1>			
+		</div>
+		<br>
+		<div>
+			<input type="text" id="miBuscador" onkeyup="myFunction()" placeholder="Buscar.." title="">
+		</div>
+		<br>
+		<div>
+			<ul class="NavBar">
+				<li><a href="index.html" class="NavItem">Inicio</a></li>
+				<li><a href="eshop.html" class="NavItem">Tienda</a></li>
+				<li><a href="micuocox.html" class="NavItem">MI CUOCOX</a></li>
+				<li><a href="blog.html" class="NavItem">Blog</a></li>
+				<li><a href="contacto.html" class="NavItem">Contactanos</a></li>
+			</ul>
+		</div>
+	</header>
+	<br>
+	<hr>
+	<br>
+	<h2 class="titulo-seccion">Tienda</h2>
+	<section id="scTienda" class="seccionDividida">
+		<div id="filtroTienda" class="marcos" style="width: 20%;">
+			<form action="" method="get">
+				<input type="checkbox" name="Articulo_01" value="1">
+				<label for="Articulo_01">Alimentos</label><br>
+				<input type="checkbox" name="Articulo_02" value="2">
+				<label for="Articulo_01">Bebidas</label><br>
+				<input type="checkbox" name="Articulo_03" value="3" checked>
+				<label for="Articulo_03">Bowls</label><br>
+				<input type="checkbox" name="Articulo_04" value="4" checked>
+				<label for="Articulo_04">Máquinas</label><br>
+				<input type="checkbox" name="Articulo_05" value="5" checked>
+				<label for="Articulo_05">Materia prima</label><br>
+				<input type="checkbox" name="Articulo_06" value="6" checked>
+				<label for="Articulo_06">Repostería</label><br>
+				<input type="checkbox" name="Articulo_07" value="7" checked>
+				<label for="Articulo_07">Utensilios</label>
+				<br><br>
+				<button id="FiltrarTienda" class="button">Filtrar</button>
+				<!-- <input type="submit" value="Filtrar"> -->
+			</form>
+		</div>
+		<div id="dvProductos" style="width: 80%" class="imagenDescripcion">
+			<div id="dvProducto_01">
+				<img src="img/Manga_Silicona_01.jpg" class="previewImg marcos" alt="">
+				<p>Juego de manga pastelera de silicona con 14 boquillas grandes de acero inoxidable y 1 manga...<br>$ 1000</p>
+			</div>
+			<div id="dvProducto_02">
+				<img src="img/Manga_Silicona_02.jpg" class="previewImg marcos" alt="">
+				<p>Bolsas de Pastelería Mangas Pastelera 100pcs desechable Manga repostería para Fondant...<br>$ 896</p>
+			</div>
+			<div id="dvProducto_03">
+				<img src="img/Manga_Silicona_03.jpg" class="previewImg marcos" alt="">
+				<p>Set De Decoración De Tartas, 100 Mangas Pasteleras Desechables, 6 Boquillas de Acero Inoxidable...<br>$ 1235</p>
+			</div>
+			<div id="dvProducto_04">
+				<img src="img/Manga_Silicona_01.jpg" class="previewImg marcos" alt="">
+				<p>Set De Decoración De Tartas, 100 Mangas Pasteleras Desechables, 6 Boquillas de Acero Inoxidable...<br>$ 1235</p>
+			</div>
+		</div>
+	</section>
+	<br>
+	<hr>
+	<br>
+	<h2 class="titulo-seccion">Mi CUOCOX</h2>
+	<section id="scCuocox" class="presentacionCuocox">
+		<div id="dvLoginCuocox">
+			<p class="centrar-objetos">Ingresa con tu usuario y contraseña para disfrutar de todas las funcionalidades.</p>
+			<br>
+			<button name="login" class="button centrar-objetos" onclick="document.getElementById('id01').style.display='block'">Ingresar</button>
+			<!-- <input name="login" type="submit" value="Ingresar" class="centrar-objetos" onclick="document.getElementById('id01').style.display='block'"> -->
+		</div>
+		<br>
+		<div id="dvAplicacionesCuocox" class="aplicacionesCuocox">
+			<div id="dvAplicacionCuocox_01">
+				<img src="img/Mi_Recetario_CUOCOX.jpeg" alt="" class="previewImg">
+				<h3 class="titulo-seccion">Mi recetario</h3>
+				<p>Aquí podrás ir cargando tus recetas favoritas, crear nuevos platos y también compartirlos con el resto de la comunidad.</p>
+			</div>			
+			<div id="dvAplicacionCuocox_02">
+				<img src="img/Mi_Menu_CUOCOX.jpg" alt="" class="previewImg">
+				<h3 class="titulo-seccion">Mi menú</h3>
+				<p>Con esta opción podrás planificar un menú completo para tu semana o mes utilizando tu recetario.</p>
+			</div>
+			<div id="dvAplicacionCuocox_03">
+				<img src="img/Mi_Almacen_CUOCOX.jpg" alt="" class="previewImg">
+				<h3 class="titulo-seccion">Mi Almacen</h3>
+				<p>En esta sección puedes mantener cargados los productos de tu cocina para una mejor organización del menú e incluso armar la lista de compras.</p>
+			</div>
+			<div id="dvAplicacionCuocox_04">
+				<img src="img/Mis_Herramientas_CUOCOX.jpg" alt="" class="previewImg">
+				<h3 class="titulo-seccion">Herramientas</h3>
+				<p>Aquí te compartimos algunas aplicaciones y tips para facilitar la ejecución de tus recetas.</p>
+			</div>
+		</div>
+	</section>
+	<br>
+	<hr>
+	<h2 class="titulo-seccion">Blog</h2>
+	<section id="scTienda" class="seccionDividida">
+		<div id="filtroBlog" class="marcos" style="width: 20%;">
+			<form action="" method="get">
+				<input type="checkbox" name="ultimas_entradas" value="1">
+				<label for="ultimas_entradas">Últimas entradas</label><br>
+				<input type="checkbox" name="lo_mas_leido" value="2">
+				<label for="lo_mas_leido">Lo más leído</label><br>
+				<input type="checkbox" name="festividades" value="3" checked>
+				<label for="festividades">Festividades</label><br>
+				<input type="checkbox" name="de_nuestros_lectores" value="4" checked>
+				<label for="de_nuestros_lectores">De nuestros lectores</label><br>
+				<input type="checkbox" name="consejos_de_cocina" value="5" checked>
+				<label for="consejos_de_cocina">Consejos de cocina</label><br><br>
+				<button id="FiltrarBlog" class="button">Filtrar</button>
+				<!-- <input type="submit" value="Filtrar"> -->
+			</form>
+		</div>
+		<div id="dvNotas" style="width: 80%" class="imagenDescripcion">
+			<div id="dvNota_01">
+				<p class="marcos">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus bibendum ex nibh, fringilla vehicula est suscipit lacinia. Suspendisse ac eros sagittis ipsum tincidunt dapibus vitae eu elit. Sed ac neque ac nunc egestas viverra. Nulla facilisi. Nulla quis odio orci. Maecenas ac molestie augue, eu rutrum enim. Nam dignissim commodo tempus. Proin efficitur ante sed finibus faucibus. Donec non neque diam.</p>
+			</div>
+			<div id="dvNota_02">
+				<p class="marcos">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus bibendum ex nibh, fringilla vehicula est suscipit lacinia. Suspendisse ac eros sagittis ipsum tincidunt dapibus vitae eu elit. Sed ac neque ac nunc egestas viverra. Nulla facilisi. Nulla quis odio orci. Maecenas ac molestie augue, eu rutrum enim. Nam dignissim commodo tempus. Proin efficitur ante sed finibus faucibus. Donec non neque diam.</p>
+			</div>
+			<div id="dvNota_03">
+				<p class="marcos">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus bibendum ex nibh, fringilla vehicula est suscipit lacinia. Suspendisse ac eros sagittis ipsum tincidunt dapibus vitae eu elit. Sed ac neque ac nunc egestas viverra. Nulla facilisi. Nulla quis odio orci. Maecenas ac molestie augue, eu rutrum enim. Nam dignissim commodo tempus. Proin efficitur ante sed finibus faucibus. Donec non neque diam.</p>
+			</div>
+			<div id="dvNota_04">
+				<p class="marcos">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus bibendum ex nibh, fringilla vehicula est suscipit lacinia. Suspendisse ac eros sagittis ipsum tincidunt dapibus vitae eu elit. Sed ac neque ac nunc egestas viverra. Nulla facilisi. Nulla quis odio orci. Maecenas ac molestie augue, eu rutrum enim. Nam dignissim commodo tempus. Proin efficitur ante sed finibus faucibus. Donec non neque diam.</p>
+			</div>
+		</div>
+	</section>
+	<br>
+	<hr>
+<!-- 	<footer>
+		<iframe src="contacto.html?vHeaders=false" class="frame-principal"></iframe>
+	</footer> -->
+	
+	<!-- The Modal -->
+	<div id="id01" class="modal">
+	  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+	  <!-- Modal Content -->
+	  <form class="modal-content animate" action="micuocox.html" target="_blank">
+	    <div class="imgcontainer">
+	      <img src="img/usuario-login.png" width="50px" height="50px" alt="Avatar" class="avatar">
+	    </div>
+
+	    <div class="container">
+	      <label for="uname"><b>Usuario</b></label>
+	      <input type="text" placeholder="Ingrese usuario" name="uname" required>
+	      <br>
+	      <label for="psw"><b>Contraseña</b></label>
+	      <input type="password" placeholder="Ingrese contraseña" name="psw" required>
+	      <br>
+	      <button type="submit" onclick="window.open('micuocox.html')">Ingresar</button>
+	      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancelar</button>
+	      <br>
+	      <label>
+	        <input type="checkbox" checked="checked" name="remember"> Recuerdame en esta PC
+	      </label>
+	    </div>
+
+	    <div class="container" style="background-color:#f1f1f1">
+	      <span class="psw"><a href="#">¿Olvidó su contraseña?</a></span>
+	    </div>
+	  </form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="js/helper.js"></script>
+	<script src="js/script.js"></script>
+	<title>Calculadora de ingredientes</title>
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg">
+	<h1 style="text-align:center;">Calculadora de ingredientes</h1>
+	<p>Te damos la bienvenida a la calculadora de ingredientes</p>
+	<p>
+		Sucede muchas veces que queremos realizar una receta que nos recomendaron o que hemos consegido, pero a la hora de revisar los ingredientes y las indicaciones vemos que el o los moldes utilizados difieren en medida de los que poseemos.
+	</p>
+	<p>
+		Esto hace que muchas veces realicemos la preparación y nos sobre o nos quedemos cortos y el resultado final no sea el mismo. Con esta calculadora podrás obtener las cantidades exactas<sup><b>1</b></sup> para el molde que utilizaras.
+	</p>
+	<p>
+		Manos a la obra!
+	</p>
+
+	<input type="submit" name="btnIniciar" value="Iniciar" class="button1" onclick="habilitarPasos('dvPaso1')">
+
+	<table>
+		<tr>
+			<td>
+				<div id="dvPaso1" style="display: none;">
+					<h3>PASO 1:</h3>
+					<p>Por favor ingrese los datos del molde de la receta (molde origen)</p>
+					<p>Seleccione la forma:</p>
+					<table class="table">
+						<tr>
+							<td>
+								<div>
+								  <input type="radio" id="radioRedondoOriginal" name="moldeOriginal" value="redondo" onchange="mostrar(this.name, this.value)">
+								  <label for="redondo">Redondo</label>
+								</div>
+							</td>
+							<td rowspan="3">
+								<!-- Molde Redondo -->
+								<div id="moldeOriginal">
+									<table id="moldeOriginalredondo" style="display: none;">
+										<tr>
+											<td rowspan="3">
+												<img src="imgs/redondo.png" height="100" width="100">
+											</td>
+											<td>Altura:</td>
+											<td><input type="text" id="alturaOriginalRedondo" placeholder="Altura en centímetros..." required></td>
+										</tr>
+										<tr>
+											<td>Diámetro:</td>
+											<td><input type="text" id="diametroOriginalRedondo" placeholder="Diámetro en centímetros..." required></td>
+										</tr>
+										<tr>
+											<td colspan="2" class="td">
+												<input type="submit" id="guardarOriginalRedondo" value="Guardar datos" class="button2" onclick="cargarMolde('Original','redondo')">
+											<p id="mensajeOriginalredondo"></p></td>
+										</tr>
+									</table>
+
+								<!-- Molde Cuadrado -->
+
+									<table id="moldeOriginalcuadrado" style="display: none;">
+										<tr>
+											<td rowspan="3">
+												<img src="imgs/cuadrado.png" height="100" width="100">
+											</td>
+											<td>Altura:</td>
+											<td><input type="text" id="alturaOriginalCuadrado" placeholder="Altura en centímetros..." required></td>
+										</tr>
+										<tr>
+											<td>Lado:</td>
+											<td><input type="text" id="ladoOriginalCuadrado" placeholder="Lado en centímetros..." required></td>
+										</tr>
+										<tr>
+											<td colspan="2" class="td">
+												<input type="submit" id="guardarOriginalCuadrado" value="Guardar datos" class="button2" onclick="cargarMolde('Original','cuadrado')">
+												<p id="mensajeOriginalcuadrado"></p></td>
+										</tr>
+									</table>
+
+								<!-- Molde Rectangular -->
+
+									<table id="moldeOriginalrectangular" style="display: none;">
+										<tr>
+											<td rowspan="4">
+												<img src="imgs/rectangular.png" height="100" width="100">
+											</td>
+											<td>Altura:</td>
+											<td><input type="text" id="alturaOriginalRectangular" placeholder="Altura en centímetros..." required></td>
+										</tr>
+										<tr>
+											<td>Lado 1:</td>
+											<td><input type="text" id="lado1OriginalRectangular" placeholder="Lado 1 en centímetros..." required></td>
+										</tr>
+										<tr>
+											<td>Lado 2:</td>
+											<td><input type="text" id="lado2OriginalRectangular" placeholder="Lado 2 en centímetros..." required></td>
+										</tr>
+										<tr>
+											<td colspan="2" class="td">
+												<input type="submit" id="guardarOriginalRectangular" value="Guardar datos" class="button2" onclick="cargarMolde('Original','rectangular')">
+												<p id="mensajeOriginalrectangular"></p></td>
+										</tr>
+									</table>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div>
+								  <input type="radio" id="radioCuadradoOriginal" name="moldeOriginal" value="cuadrado" onchange="mostrar(this.name, this.value)">
+								  <label for="cuadrado">Cuadrado</label>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div>
+								  <input type="radio" id="radioRectangularOriginal" name="moldeOriginal" value="rectangular" onchange="mostrar(this.name, this.value)">
+								  <label for="rectangular">Rectangular</label>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>				
+			</td>
+			<td>
+				<img src="imgs/flecha-derecha-azul.png" id="imgPaso" style="display: none;">
+			</td>
+			<td>
+				<div id="dvPaso2" style="display: none;">
+					<h3>PASO 2:</h3>
+					<p>Por favor ingrese los datos de su molde</p>
+					<p>Seleccione la forma:</p>
+					<table class="table">
+						<tr>
+							<td>
+								<div>
+								  <input type="radio" id="radioRedondoUsuario" name="moldeUsuario" value="redondo" onchange="mostrar(this.name, this.value)">
+								  <label for="redondo">Redondo</label>
+								</div>
+							</td>
+							<td rowspan="3">
+								<!-- Molde Redondo -->
+								<div id="moldeUsuario">
+									<table id="moldeUsuarioredondo" style="display: none;">
+										<tr>
+											<td rowspan="3">
+												<img src="imgs/redondo.png" height="100" width="100">
+											</td>
+											<td>Altura:</td>
+											<td><input type="text" id="alturaUsuarioRedondo" placeholder="Altura en centímetros..." required></td>
+										</tr>
+										<tr>
+											<td>Diámetro:</td>
+											<td><input type="text" id="diametroUsuarioRedondo" placeholder="Diámetro en centímetros..." required></td>
+										</tr>
+										<tr>
+											<td colspan="2" class="td">
+												<input type="submit" id="guardarUsuarioRedondo" value="Guardar datos" class="button2" onclick="cargarMolde('Usuario','redondo')">
+												<p id="mensajeUsuarioredondo"></p></td>
+										</tr>
+									</table>
+
+								<!-- Molde Cuadrado -->
+
+									<table id="moldeUsuariocuadrado" style="display: none;">
+										<tr>
+											<td rowspan="3">
+												<img src="imgs/cuadrado.png" height="100" width="100">
+											</td>
+											<td>Altura:</td>
+											<td><input type="text" id="alturaUsuarioCuadrado" placeholder="Altura en centímetros..." required></td>
+										</tr>
+										<tr>
+											<td>Lado:</td>
+											<td><input type="text" id="ladoUsuarioCuadrado" placeholder="Lado en centímetros..." required></td>
+										</tr>
+										<tr>
+											<td colspan="2" class="td">
+												<input type="submit" id="guardarUsuarioCuadrado" value="Guardar datos" class="button2" onclick="cargarMolde('Usuario','cuadrado')">
+												<p id="mensajeUsuariocuadrado"></p></td>
+										</tr>
+									</table>
+
+								<!-- Molde Rectangular -->
+
+									<table id="moldeUsuariorectangular" style="display: none;">
+										<tr>
+											<td rowspan="4">
+												<img src="imgs/rectangular.png" height="100" width="100">
+											</td>
+											<td>Altura:</td>
+											<td><input type="text" id="alturaUsuarioRectangular" placeholder="Altura en centímetros..." required></td>
+										</tr>
+										<tr>
+											<td>Lado 1:</td>
+											<td><input type="text" id="lado1UsuarioRectangular" placeholder="Lado 1 en centímetros..." required></td>
+										</tr>
+										<tr>
+											<td>Lado 2:</td>
+											<td><input type="text" id="lado2UsuarioRectangular" placeholder="Lado 2 en centímetros..." required></td>
+										</tr>
+										<tr>
+											<td colspan="2" class="td">
+												<input type="submit" id="guardarUsuarioRectangular" value="Guardar datos" class="button2" onclick="cargarMolde('Usuario','rectangular')">
+												<p id="mensajeUsuariorectangular"></p></td>
+										</tr>
+									</table>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div>
+								  <input type="radio" id="radioCuadradoUsuario" name="moldeUsuario" value="cuadrado" onchange="mostrar(this.name, this.value)">
+								  <label for="cuadrado">Cuadrado</label>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div>
+								  <input type="radio" id="radioRectangularUsuario" name="moldeUsuario" value="rectangular" onchange="mostrar(this.name, this.value)">
+								  <label for="rectangular">Rectangular</label>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>	
+			</td>
+		</tr>
+	</table>
+
+
+	
+
+	<div id="dvPaso3" style="display: none;">
+		<h3>PASO 3:</h3>
+		<p>Ahora haga clic en <b><i>Ver resultados</i></b> para conocer el coeficiente con el que se calcularan sus ingredientes. Si está conforme con la información, luego puede hacer clic en <b><i>Calcular ingredientes</i></b> para armar su lista personalizada de la receta.</p>
+		<input type="submit" id="resultados" value="Ver resultados" class="button1" onclick="coeficiente()">
+		<div id="coeficiente" style="display: none;"></div>
+	</div>
+
+
+	<div id="producto" style="display: none;">
+		<p>Aquí puede agregar los productos que hay en su receta con las cantidades originales y le proveeremos el equivalente para que la preparación se corresponda con lo necesario para su molde.</p>
+		<table style="border-width: 1px; border-style: solid; border-color: black;">
+			<tr>
+				<td><p>Producto:</p></td>
+				<td><input type="text" id="nombreProducto" placeholder="Nombre del producto" required></td>
+				<td><p>Cantidad:</p></td>
+				<td><input type="text" id="cantidadProducto" placeholder="Cantidad de producto" required></td>
+				<td><p>Unidad de medida:</p></td>
+				<td><select id="uMedida" required><option value="none"></option><option value="gramos">gramos</option><option value="kilos">kilos</option><option value="litros">litros</option></select></td>
+				<td><input type="submit" id="calcularIngredientes" value="Calcular ingredientes" onclick="cargarProductos()"></td>
+			</tr>
+		</table>
+		<br>
+		<table id="productos" style="border-width: 1px; border-style: solid; border-color: black;">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Producto</th>
+					<th>Cantidad original</th>
+					<th>Cantidad modificada</th>
+					<th>Unidad de medida</th>
+				</tr>					
+			</thead>
+			<tbody></tbody>
+		</table>
+	</div>
+
+</body>
+
+	<footer>
+		<p>
+		<b>Aclaraciones importantes:</b>
+			1. Si bien el cálculo de proporciones para los materiales está largamente probado, desde nuestra aplicación no podemos garantizar que las cantidades de la receta original sean las correctas para la preparación del producto final.
+
+		</p>
+	</footer>
+</html>
